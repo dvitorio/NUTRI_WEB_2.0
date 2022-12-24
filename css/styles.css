@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+*{
+     margin: 0;
+     padding: 0;
+     font-family: 'Quicksand', sans-serif;
+     box-sizing: border-box;
+}
+
+.blackScreen{
+     position: absolute;
+     width: 100vw;
+     min-height: 100vh;
+     background-color: rgba(0, 0, 0, 0.641);
+     z-index: 10;
+}
+
+.generalSite{
+     background-color: rgb(241, 231, 231);
+     min-height: 100vh;
+     width: 100vw;
+}
+
+.centerColumn{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+}
+
+.centerRow{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-wrap: nowrap;
+}
+
+.divPositionCenter{
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     min-width: 300px;
+}
+
+.radiusMediun{
+     border-radius: 6px !important;
+}
+
+.radiusLarge{
+     border-radius: 10px !important;
+
+}
+
+a:hover{
+     color: blue !important;
+     cursor: pointer;
+}
+
+.coverSite{
+     border-radius: 20px !important;
+}
+
+.siteImg img{
+     max-width: 700px;
+     width: 100%;
+     border-radius: 18px !important;
+}
+
+.sitePhrase{
+     max-width: 650px;
+     width: 100%;
+     border-radius: 10px;
+     background-color: white;
+}
+
+.menuButtons{
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     animation: menuButtons 0.8s linear !important;
+}
+
+.imcInfo{
+     position: relative;
+     animation: imcInfo 0.8s linear !important;
+     background-color: white !important;
+     z-index: 20 !important;
+}
+
+.imcModal{
+     width: 62vw;
+     flex-wrap: wrap;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+}
+
+.imcBox,
+.imcResult{
+     background-color: white;
+     border-radius: 6px !important;
+     min-width: 290px;
+     max-width: 450px;
+     margin-bottom: 5px !important;
+}
+
+.imcResultImg{
+     margin-left: 5px;
+     width: 170px;
+     height: 200px;
+}
+
+.imcResultAnalisys{
+     width: 280px;
+     height: auto;
+     margin-right: 5px;
+}
+
+.imcResultImg{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     overflow: hidden;
+     /*background-color: rgb(214, 200, 200) !important;*/
+}
+
+#infoIMC{
+     font-size: 0.8rem !important;
+}
+
+#imcInputResult{
+     font-size: 2.5rem;
+}
+
+
+
+
+
+/*MEDIA QUERIES - RESPONSIVIDADE*/
+@media screen and (min-width: 250px) and (max-width: 576px) {
+     .menuButtons{
+          min-width: 98%;
+     }
+}
+
+@media screen and (min-width: 577px) and (max-width: 768px) {
+     .menuButtons{
+          min-width: 40%;
+          max-width: 60%;
+     }
+}
+
+@media screen and (min-width: 769px) and (max-width: 960px) {
+     .menuButtons{
+          min-width: 30%;
+          max-width: 50%;
+     }
+}
+
+@media screen and (min-width: 961px) and (max-width: 1440px) {
+     .menuButtons{
+          min-width: 30%;
+          max-width: 50%;
+     }
+}
+
+
