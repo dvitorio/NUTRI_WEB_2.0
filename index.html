@@ -13,6 +13,7 @@
      <link rel="stylesheet" href="/css/styles.css" defer>
      <link rel="stylesheet" href="css/animation.css" defer>
      <!--SCRIPTS-->
+
 </head>
 <body>
      
@@ -22,7 +23,7 @@
           <!--Menu de navegação-->
           <nav class="navbar navbar-expand-lg navbar-light bg-light navigation" id="navigation">
                <div class="container-fluid">
-                 <h1 class="fs-2 navbar-brand text-secondary"><b>NutriWeb 2.0</b></h1>
+                 <h1 class="fs-2 navbar-brand text-secondary"><b><img class="img" src="/img/nutricao.png" alt="" width="45"> NutriWeb 2.0</b></h1>
                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                    <span class="navbar-toggler-icon"></span>
                  </button>
@@ -35,10 +36,10 @@
                        <a class="nav-link" id="linkInfoModalIMC">Índice de Massa Corporal (IMC)</a>
                      </li>
                      <li class="nav-item">
-                       <a class="nav-link" href="#">Relação Cintura-Quadril (RCQ)</a>
+                       <a class="nav-link" id="linkInfoModalRCQ">Relação Cintura-Quadril (RCQ)</a>
                      </li>
                      <li class="nav-item">
-                       <a class="nav-link" href="#">Índice de Adiposidade Corporal (IAC)</a>
+                       <a class="nav-link" id="linkInfoModalIAC">Índice de Adiposidade Corporal (IAC)</a>
                      </li>
                      <li class="d-flex nav-item">
                        <a class="nav-link" href=""><i class="fa-brands fa-github fs-5 mx-2"></i></a>
@@ -80,9 +81,9 @@
           </div>
         </div>
 
-
       <!--Botões de menu-->
       <div class="bg-white col-sm-12 col-lg-3 d-none p-3 menuButtons mx-auto radiusMediun shadow" id="menuButtons"> 
+          <img class="d-block mx-auto" src="/img/nutricao.png" alt="" width="45">
           <h4 class="mt-2 text-center text-secondary">NutriWeb 2.0</h4>
           <button type="button" class="btn btn-block btn-primary mb-2 w-100" id="btnOpenIMC"><i class="fa-solid fa-weight-scale"></i> Índice de Massa Corporal</button>
           <button type="button" class="btn btn-block btn-primary mb-2 w-100"><i class="fa-solid fa-people-arrows"></i> Relação Cintura-Quadril</button>
@@ -100,41 +101,30 @@
           consideração a composição corporal da pessoa, ou seja, se um indivíduo com mais massa muscular ser erroneamente avaliado como tendo sobrepeso
           ou obeso. <br/>A fórmula do IMC é dada através da expressão <b>IMC = peso/(altura)<sup>2</sup>.</b> 
         </p>
-        <button type="button" class="btn btn-outline-secondary" id="escapeInfoIMC"><i class="fa-solid fa-xmark"></i> Sair</button>
+        <button type="button" class="btn btn-danger" id="escapeInfoIMC"><i class="fa-solid fa-xmark"></i> Sair</button>
+        <button type="button" class="btn btn-primary text-white" id="imcFromInfo">Saiba seu IMC</button>
+
       </div>
 
         <!--Conteúdo do container IMC-->
           <div class="centerRow container imcModal mx-auto row" id="imcModal">
                <div class="col-sm-12 col-lg-6 d-none imcBox mt-5 mx-auto p-2 shadow" id="imcBox">
-                    <h5 class="mt-3 text-center text-secondary">Índice de Massa Coporal (IMC)</h5>
-                    <h6 class="mb-2 text-center text-secondary">Preencha os dados para começar</h6>
+                <img class="d-block mt-2 mx-auto" src="/img/nutricao.png" alt="" width="40">
+                    <h5 class="mt-1 text-center text-secondary">Índice de Massa Coporal (IMC)</h5>
+                    <h6 class="mb-3 text-center text-secondary">Preencha os dados para começar</h6>
                     <input class="form-control mb-3" placeholder="Seu peso (em quilos)" type="number" id="imcWeight">
                     <input class="form-control mb-3" placeholder="Sua altura (em metros)" type="number" id="imcHeight">
-                    <label class="text-secondary" for="manIMC">Homem</label>
-                    <input type="radio" name="genero" id="manIMC" value="1">
-                    <label class="text-secondary" for="womanIMC">Mulher</label>
-                    <input type="radio" name="genero" id="womanIMC" value="2">
                     <button type="button" class="btn btn-block btn-primary mt-2 mb-2 w-100" id="btnCalculateIMC">Calcular IMC</button>
                     <input class="d-none form-control my-2 text-center text-primary" type="text" id="imcInputResult" disabled>
-                    <button type="button" class="btn btn-block btn-danger w-100" id="btnCloseIMC">Fechar</button>
-                    <h6 class="mt-3 text-center text-secondary" id="infoIMC">Saiba mais em <a href=""><i class="fa-brands fa-github text-secondary"></i></a></h6>
-               </div>
-               <div class="col-sm-12 col-lg-6 caixa d-none p-2 imcResult shadow" id="imcResult">
-                    <h5 class="text-center text-secondary"><b>Resultado IMC</b></h5>
-                    <div class="row">
-                         <div class="col-sm-12 col-lg-6 imcResultImg mx-auto radiusMediun" id="imcResultImg">
-                              <img class="d-block img w-100" src="/img/manSlimSilhouette.png" alt="" height="160">
-                         </div>
-                         <div class="col-sm-12 col-lg-6 imcResultAnalisys radiusMediun mx-auto" id="imcResultAnalisys">
-                              <span class="fs-6 text-primary" id="sexo"></span>                          
-                              <span class="fs-6 text-primary" id="heightIMC"></span><br/><br/>
-                              <span class="fs-6 text-primary" id="weightIMC"></span><br/><br/>
-                              <span class="fs-6 text-primary" id="imc"></span><br/><br/>
-                              <span class="fs-6 situation" id="situation"></span><br/>
-
-                         </div>
+                    <div class="imcButtonsResult d-none row" id="imcButtonsResult"> 
+                      <div class="col-sm-12 col-lg-6">
+                        <button type="button" class="btn btn-block btn-danger w-100" id="btnCleanIMC"><i class="fa-solid fa-pencil"></i> Limpar</button>
+                      </div>
+                      <div class="col-sm-12 col-lg-6">
+                        <button type="button" class="btn btn-block btn-outline-danger w-100" id="btnCloseIMC"><i class="fa-solid fa-xmark"></i> Fechar</button>
+                      </div>
                     </div>
-                    <button type="button" class="btn btn-block btn-outline-secondary mb-3 w-100" id="btnCloseIMCModal">Fechar</button>
+                    <h6 class="mt-3 text-center text-secondary" id="infoIMC">Saiba mais em <a href=""><i class="fa-brands fa-github text-secondary"></i></a></h6>
                </div>
           </div>
           <!--Final do conteúdo do IMC-->
