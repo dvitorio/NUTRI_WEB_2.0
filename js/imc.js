@@ -5,7 +5,6 @@ const btnCleanIMC = document.getElementById('btnCleanIMC');
 const btnCloseIMC = document.getElementById('btnCloseIMC');
 const btnCloseIMCModal = document.getElementById('btnCloseIMCModal');
 const btnCloseOptionsMenu = document.getElementById('btnCloseOptionsMenu');
-const btnImcFromInfo = document.getElementById('imcFromInfo');
 const btnOpenIMC = document.getElementById('btnOpenIMC');
 const btnStart = document.getElementById('btnStart');
 const coverSite = document.getElementById('coverSite');
@@ -19,6 +18,8 @@ const imcResult = document.getElementById('imcResult');
 const linkInfoModalIMC = document.getElementById('linkInfoModalIMC');
 const menuButtons = document.getElementById('menuButtons');
 const navigation = document.getElementById('navigation');
+const imcAnalisys = document.getElementById('imcAnalisys');
+const imcResultAnalisys = document.getElementById('imcResultAnalisys');
 
 
 //Abrir menu de opções através do botão do navbar
@@ -55,16 +56,6 @@ linkInfoModalIMC.addEventListener('click', ()=>{
      blackScreen.classList.remove('d-none');
 });
 
-//Abre o modal de cálculo de IMC direto do modal de informação sobre IMC
-btnImcFromInfo.onclick = ()=>{
-     blackScreen.classList.add('d-none');
-     coverSite.classList.add('d-none');
-     imcInfo.classList.add('d-none');
-     navigation.classList.add('d-none');
-     imcBox.classList.remove('d-none');
-};
-
-
 //Fecha modal de informação de IMC
 escapeInfoIMC.addEventListener('click', ()=>{
      blackScreen.classList.add('d-none');
@@ -81,28 +72,38 @@ btnCalculateIMC.onclick = ()=>{
                imcInputResult.classList.remove('d-none');
                imcButtonsResult.classList.remove('d-none');
                if(imcInputResult.value < 18.5){
-                    document.getElementById('situation').innerHTML = "Seu peso está <b>ABAIXO</b> do ideal";
-                    situation.classList.add('text-danger');
+                    document.getElementById('imcAnalisys').innerHTML = "Seu peso está <b>ABAIXO</b> do ideal";
+                    document.getElementById('imcAnalisys').innerHTML = `Sua altura é ${imcHeight}`;
+                    imcAnalisys.classList.add('text-danger');
                }
                else if((imcInputResult.value >= 18.5) && (imcInputResult.value < 24.99)){
-                    document.getElementById('situation').innerHTML = "Seu peso é considerado <b>NORMAL</b>";
-                    situation.classList.add('text-success');
+                    document.getElementById('imcAnalisys').innerHTML = "Seu peso é considerado <b>NORMAL</b>";
+                    document.getElementById('imcAnalisys').innerHTML = `Sua altura é ${imcHeight}`;
+
+                    imcAnalisys.classList.add('text-success');
                }
                else if((imcInputResult.value >= 25) && (imcInputResult.value < 29.99)){
-                    document.getElementById('situation').innerHTML = "Você está com <b>SOBREPESO</b>";
-                    situation.classList.add('text-warning');
+                    document.getElementById('imcAnalisys').innerHTML = "Você está com <b>SOBREPESO</b>";
+                    document.getElementById('imcHeight').innerText = `Sua altura é ${imcHeight.value}`;
+
+                    imcAnalisys.classList.add('text-warning');
                }
                else if((imcInputResult.value >= 30) && (imcInputResult.value < 34.99)){
-                    document.getElementById('situation').innerHTML = "Você está com <b>OBESIDADE GRAU I</b>";
-                    situation.classList.add('text-danger');
+                    document.getElementById('imcAnalisys').innerHTML = "Você está com <b>OBESIDADE GRAU I</b>";
+                    document.getElementById('imcHeight').innerHTML = `Sua altura é ${imcHeight.value}`;
+
+                    imcAnalisys.classList.add('text-danger');
                }
                else if((imcInputResult.value >= 30) && (imcInputResult.value < 349.99)){
-                    document.getElementById('situation').innerHTML = "Você está com <b>OBESIDADE GRAU II</b>";
-                    situation.classList.add('text-danger');
+                    document.getElementById('imcAnalisys').innerHTML = "Você está com <b>OBESIDADE GRAU II</b>";
+                    document.getElementById('imcHeight').innerHTML = `Sua altura é ${imcHeight.value}`;
+
+                    imcAnalisys.classList.add('text-danger');
                }
                else if(imcInputResult.value >= 40){
-                    document.getElementById('situation').innerHTML = "Você está com <b>OBESIDADE MÓRBIDA</b>";
-                    situation.classList.add('text-danger');
+                    document.getElementById('imcAnalisys').innerHTML = "Você está com <b>OBESIDADE MÓRBIDA</b>";
+                    document.getElementById('imcHeight').innerHTML = `Sua altura é ${imcHeight.value}`;
+                    imcAnalisys.classList.add('text-danger');
                }
           }
           else{
@@ -117,10 +118,10 @@ btnCloseIMC.onclick = ()=>{
      coverSite.classList.remove('d-none');
 }
 
-//Fechar IMC_MODAL
-btnCloseIMCModal.onclick = ()=>{
+//Fecha modal do IMC através do botão BTN-CLOSE
+function closeIMC(){
+     imcBox.classList.add('d-none');
      navigation.classList.remove('d-none');
-     imcModal.classList.add('d-none');
      coverSite.classList.remove('d-none');
-     menuButtons.classList.remove('d-none');
 }
+

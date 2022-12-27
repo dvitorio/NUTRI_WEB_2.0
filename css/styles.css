@@ -82,6 +82,11 @@ a:hover{
      animation: menuButtons 0.8s linear !important;
 }
 
+.btn-close{
+     position: relative;
+     margin-left: 90%;
+}
+
 .imcInfo{
      position: relative;
      animation: imcInfo 0.8s linear !important;
@@ -90,28 +95,23 @@ a:hover{
 }
 
 .imcModal{
-     width: 62vw;
-     flex-wrap: wrap;
      position: absolute;
      top: 50%;
      left: 50%;
      transform: translate(-50%, -50%);
 }
 
-.imcBox,
-.imcResult{
-     background-color: white;
-     border-radius: 6px !important;
-     min-width: 290px;
-     max-width: 450px;
-     margin-bottom: 5px !important;
+.imcBox{
+     min-width: 290px !important;
+     max-width: 450px !important;
 }
 
 #infoIMC{
      font-size: 0.8rem !important;
 }
 
-#imcInputResult{
+#imcInputResult,
+#rcqInputResult{
      font-size: 2rem;
      height: 45px;
 }
