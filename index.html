@@ -159,7 +159,7 @@
     <!------------------------------------------------------------Final do conteúdo do IMC------------------------------------------------------>
 
 
-    <!--------------------------------------------------------------------RQC------------------------------------------------------------------->
+    <!--------------------------------------------------------------------RCQ------------------------------------------------------------------->
     <!--MODAL DE CÁLCULO DO RCQ-->
     <div class="col-sm-12 col-lg-6 d-none rcqModal mx-auto row" id="rcqModal">
       <div class="bg-white col-sm-12 col-lg-6 rcqBox mt-5 mx-auto p-2 radiusMediun shadow" id="rcqBox">
@@ -167,14 +167,14 @@
         <img class="d-block mt-2 mx-auto" src="/img/nutricao.png" alt="" width="40">
         <h5 class="mt-1 text-center text-secondary"><b>Relação Cintura/Quadril (RCQ)</b></h5>
         <h6 class="mb-3 text-center text-secondary">Preencha os dados para começar</h6>
+        <div class="form-check form-check-inline generoRCQ">
+          <label for="masculino"> Masculino</label>
+          <input class="radio mr-2" name="gender" type="radio" id="masculino" value="1">
+          <label for="feminino"> Feminino</label>
+          <input class="radio mr-2" name="gender" type="radio" id="feminino" value="2">
+        </div>
         <input class="form-control mb-3" placeholder="Medida da cintura (cm)" type="number" id="rcqWaist">
         <input class="form-control mb-3" placeholder="Medida do quadril (cm)" type="number" id="rcqHip">
-        <div class="form-check form-check-inline">
-          <label for="masculino">Masculino</label>
-          <input class="radio" name="gender" type="radio" id="masculino" value="1">
-          <label for="feminino">Feminino</label>
-          <input class="radio" name="gender" type="radio" id="feminino" value="2">
-        </div>
         <button type="button" class="btn btn-block btn-primary mt-2 mb-2 w-100" id="btnCalculateRCQ">Calcular RCQ</button>
         <div class="d-none inputRCQResults" id="inputRCQResults">
           <input class="bg-white border-0 fw-bold form-control my-2 text-center" type="text" id="rcqGenderResult" disabled>
@@ -206,14 +206,14 @@
         <img class="d-block mt-2 mx-auto" src="/img/nutricao.png" alt="" width="40">
         <h5 class="mt-1 text-center text-secondary"><b>Índice de Adiposidade Corporal (IAC)</b></h5>
         <h6 class="mb-3 text-center text-secondary">Preencha os dados para começar</h6>
-        <input class="form-control mb-3" placeholder="Circunferência do quadril (cm)" type="number" id="iacHip">
-        <input class="form-control mb-3" placeholder="Medida da altura (m)" type="number" id="iacHeight">
         <div class="form-check form-check-inline">
           <label for="iac_man">Masculino</label>
-          <input class="radio" name="genderIAC" type="radio" id="iac_man" value="1">
+          <input class="radio mr-2" name="genderIAC" type="radio" id="iac_man" value="1">
           <label for="iac_woman">Feminino</label>
-          <input class="radio" name="genderIAC" type="radio" id="iac_woman" value="2">
+          <input class="radio mr-2" name="genderIAC" type="radio" id="iac_woman" value="2">
         </div>
+        <input class="form-control mb-3" placeholder="Circunferência do quadril (cm)" type="number" id="iacHip">
+        <input class="form-control mb-3" placeholder="Medida da altura (m)" type="number" id="iacHeight">
         <button type="button" class="btn btn-block btn-primary mt-2 mb-2 w-100" id="btnCalculateIAC">Calcular IAC</button>
         <div class="d-none inputIACResults" id="inputIACResults">
           <input class="bg-white border-0 form-control my-1 text-center fw-bold" type="text" id="iacGenderResult" disabled>

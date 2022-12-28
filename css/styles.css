@@ -94,7 +94,10 @@ a:hover{
      z-index: 20 !important;
 }
 
-
+.generoRCQ{
+     margin-left: 0;
+     float: center;
+}
  
 .imcBox,
 .iacBox,
