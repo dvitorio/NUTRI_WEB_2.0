@@ -117,7 +117,8 @@ a:hover{
 
 #imcInputResult,
 #rcqInputResult,
-#iacResult
+#iacResult,
+#rcqResult
 {
      font-size: 2rem;
      height: 40px;

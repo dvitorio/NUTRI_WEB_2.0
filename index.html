@@ -177,12 +177,18 @@
         </div>
         <button type="button" class="btn btn-block btn-primary mt-2 mb-2 w-100" id="btnCalculateRCQ">Calcular RCQ</button>
         <div class="d-none inputRCQResults" id="inputRCQResults">
-          <input class="border-0 form-control my-2 text-center text-primary" type="number" id="rcqInputResult" disabled>
+          <input class="bg-white border-0 fw-bold form-control my-2 text-center" type="text" id="rcqGenderResult" disabled>
+          <input class="bg-white border-0 fw-bold form-control my-2 text-center" type="number" id="rcqResult" disabled>
+          <input class="bg-white border-0 fw-bold form-control my-2 text-center" type="text" id="rcqSituationResult" disabled>
         </div>
         <div class="rcqButtonsResult d-none row" id="rcqButtonsResult">
           <div class="col-sm-12 col-lg-6">
-            <button type="button" class="btn btn-block btn-danger w-100" id="btnCleanRCQ"><i
+            <button type="button" class="btn btn-block btn-outline-danger w-100" id="btnCleanRCQ"><i
                 class="fa-solid fa-pencil"></i> Limpar</button>
+          </div>
+          <div class="col-sm-12 col-lg-6">
+            <button type="button" class="btn btn-block btn-outline-secondary w-100" id="btnPrintRCQ"><i
+                class="fa-solid fa-pencil"></i> Imprimir resultado</button>
           </div>
         </div>
         <h6 class="mt-3 text-center text-secondary" id="infoRCQ">Saiba mais em <a href=""><i
@@ -210,9 +216,9 @@
         </div>
         <button type="button" class="btn btn-block btn-primary mt-2 mb-2 w-100" id="btnCalculateIAC">Calcular IAC</button>
         <div class="d-none inputIACResults" id="inputIACResults">
-          <input class="bg-white border-0 form-control my-1 text-center text-primary" type="text" id="iacGenderResult" disabled>
-          <input class="bg-white border-0 form-control my-1 text-center text-primary" type="number" id="iacResult" disabled>
-          <input class="bg-white border-0 form-control my-1 text-center text-primary" type="text" id="iacSituationResult" disabled>
+          <input class="bg-white border-0 form-control my-1 text-center fw-bold" type="text" id="iacGenderResult" disabled>
+          <input class="bg-white border-0 form-control my-1 text-center fw-bold" type="number" id="iacResult" disabled>
+          <input class="bg-white border-0 form-control my-1 text-center fw-bold" type="text" id="iacSituationResult" disabled>
         </div>
         <div class="iacButtonsResult d-none row" id="iacButtonsResult">
           <div class="col-sm-12 col-lg-6">
