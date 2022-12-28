@@ -193,27 +193,29 @@
 
 
     <!--------------------------------------------------------------------IAC------------------------------------------------------------------->
-    <!--MODAL DE CÁLCULO DO RCQ-->
+    <!--MODAL DE CÁLCULO DO IAC-->
     <div class="col-lg-6 d-none iacModal mx-auto row" id="iacModal">
       <div class="bg-white col-sm-12 col-lg-6 iacBox mt-5 mx-auto p-2 radiusMediun shadow" id="iacBox">
         <button type="button" class="btn btn-close text-right text-left" id="btnCloseIAC"></button>
         <img class="d-block mt-2 mx-auto" src="/img/nutricao.png" alt="" width="40">
         <h5 class="mt-1 text-center text-secondary"><b>Índice de Adiposidade Corporal (IAC)</b></h5>
         <h6 class="mb-3 text-center text-secondary">Preencha os dados para começar</h6>
-        <input class="form-control mb-3" placeholder="Medida da altura (m)" type="number" id="iacHeight">
         <input class="form-control mb-3" placeholder="Circunferência do quadril (cm)" type="number" id="iacHip">
+        <input class="form-control mb-3" placeholder="Medida da altura (m)" type="number" id="iacHeight">
         <div class="form-check form-check-inline">
           <label for="iac_man">Masculino</label>
-          <input class="radio" name="gender" type="radio" id="iac_man" value="1">
+          <input class="radio" name="genderIAC" type="radio" id="iac_man" value="1">
           <label for="iac_woman">Feminino</label>
-          <input class="radio" name="gender" type="radio" id="iac_woman" value="2">
+          <input class="radio" name="genderIAC" type="radio" id="iac_woman" value="2">
         </div>
         <button type="button" class="btn btn-block btn-primary mt-2 mb-2 w-100" id="btnCalculateIAC">Calcular IAC</button>
         <div class="d-none inputIACResults" id="inputIACResults">
-          <input class="border-0 form-control my-2 text-center text-primary" type="number" id="iacInputResult" disabled>
+          <input class="bg-white border-0 form-control my-2 text-center text-primary" type="text" id="iacGenderResult" disabled>
+          <input class="bg-white border-0 form-control my-2 text-center text-primary" type="number" id="iacResult" disabled>
+          <input class="bg-white border-0 form-control my-2 text-center text-primary" type="text" id="iacSituationResult" disabled>
         </div>
         <div class="iacButtonsResult d-none row" id="iacButtonsResult">
-          <div class="col-sm-12 col-lg-6">
+          <div class="col">
             <button type="button" class="btn btn-block btn-danger w-100" id="btnCleanIAC"><i
                 class="fa-solid fa-pencil"></i> Limpar</button>
           </div>
@@ -222,7 +224,7 @@
               class="fa-brands fa-github text-secondary"></i></a></h6>
       </div>
     </div>
-    <!---------------------------------------------------------Final do conteúdo do RCQ------------------------------------------------->
+    <!---------------------------------------------------------Final do conteúdo do IAC------------------------------------------------->
 
 
   </div>

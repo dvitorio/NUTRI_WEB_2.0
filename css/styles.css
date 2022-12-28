@@ -93,10 +93,10 @@ a:hover{
      background-color: white !important;
      z-index: 20 !important;
 }
-
-.imcModal, 
+ 
 .imcBox,
-.rcqModal{
+.iacBox,
+.rcqBox{
      position: absolute;
      top: 50%;
      left: 50%;
@@ -114,7 +114,9 @@ a:hover{
 }
 
 #imcInputResult,
-#rcqInputResult{
+#rcqInputResult,
+#iacResult
+{
      font-size: 2rem;
      height: 45px;
 }
