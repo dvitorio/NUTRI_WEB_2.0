@@ -93,6 +93,8 @@ a:hover{
      background-color: white !important;
      z-index: 20 !important;
 }
+
+
  
 .imcBox,
 .iacBox,
@@ -118,7 +120,7 @@ a:hover{
 #iacResult
 {
      font-size: 2rem;
-     height: 45px;
+     height: 40px;
 }
 
 
