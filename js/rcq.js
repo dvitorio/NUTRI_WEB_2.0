@@ -6,31 +6,34 @@ const rcqInputResult = document.getElementById('rcqInputResult');
 const rcqModal = document.getElementById('rcqModal');
 const inputRCQResults = document.getElementById('inputRCQResults');
 const btnRCQ = document.getElementById('btnRCQ');
+const alertRCQ = document.getElementById('alertRCQ');
 
 
 
 //Abre o modal de RCQ
-btnRCQ.addEventListener('click', ()=>{
+btnRCQ.addEventListener('click', () => {
      rcqModal.classList.remove('d-none');
      menuButtons.classList.add('d-none');
-})
-
-//Calcula o RCQ
-btnCalculateRCQ.addEventListener('click', ()=>{
-     let rcqWaist = document.querySelector('#rcqWaist').value;
-     let rcqHip = document.querySelector('#rcqHip').value;
-     let maleRCQ = document.getElementById('maleRCQ').value;
-     let femaleRCQ = document.getElementById('femaleRCQ').value;
-          if((rcqWaist > 30 && rcqWaist <= 300) && (rcqHip > 30 && rcqHip <= 400)){
-               let rcq = (rcqWaist/rcqHip).toFixed(2);
-                    inputRCQResults.classList.remove('d-none');
-                    rcqInputResult.value = rcq;
-                    rcqInputResult.classList.remove('d-none');
-          }
 });
 
+//Calcula o RCQ
+btnCalculateRCQ.addEventListener('click', () => {
+     let rcqWaist = parseFloat(document.querySelector('#rcqWaist').value);
+     let rcqHip = parseFloat(document.querySelector('#rcqHip').value);
+     let masculino = document.getElementById('masculino');
+     let feminino = document.getElementById('feminino');
+     let gender = document.getElementsByName('gender');
+     let rcq = (rcqWaist/rcqHip).toFixed(2);
+          rcqInputResult.value = rcq;
+          inputRCQResults.classList.remove('d-none');
+          rcqInputResult.classList.remove('d-none');
+     
+});
+
+//
+
 //Fecha o modal de RCQ
-btnCloseRCQ.addEventListener('click', ()=>{
+btnCloseRCQ.addEventListener('click', () => {
      rcqModal.classList.add('d-none');
      menuButtons.classList.remove('d-none');
 });
