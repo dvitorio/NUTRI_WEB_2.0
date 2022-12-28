@@ -21,47 +21,51 @@ btnIAC.addEventListener('click', ()=>{
 btnCalculateIAC.addEventListener('click', ()=>{
      var iac_gender = document.getElementsByName('genderIAC');
           for(var i = 0; i < iac_gender.length; i++){
-               var iacHeight = parseFloat(document.getElementById('iacHeight').value.replace(',','.'));
-               var iacHip = parseFloat(document.getElementById('iacHip').value.replace(',','.'));
+               var iacHeight = parseFloat(document.getElementById('iacHeight').value);
+               var iacHip = parseFloat(document.getElementById('iacHip').value);
                var iac = (iacHip/(iacHeight * Math.pow(iacHeight, 0.5)) - 18).toFixed(2);
                inputIACResults.classList.remove('d-none');
                iacButtonsResult.classList.remove('d-none');
                iacResult.value = iac;
-               if((iac_gender[i].checked && iac_gender[i].value == '1') && (iac > 8 && iac < 20)){
-                    iacResult.classList.add('text-success', 'font-weight-bold');
-                    iacSituationResult.classList.add('text-success');
-                    iacGenderResult.value = "Sexo: Masculino"; 
-                    iacSituationResult.value = "Situação: Adiposidade normal";
+               if((iac_gender[i].checked) && (iac_gender[i].value == '1')){
+                    if((iac > 8.0) && (iac < 20.0)){
+                         iacGenderResult.value = 'Sexo: Masculino';
+                         iacSituationResult.value = 'Situação: Adiposidade normal.';
+                         iacResult.classList.add('text-success', 'font-weight-bold');
+                         iacSituationResult.classList.add('text-success', 'font-weight-bold');
+                    }
+                    else if((iac > 20.0) && (iac < 25.0)){
+                         iacGenderResult.value = 'Sexo: Masculino';
+                         iacSituationResult.value = 'Situação: Sobrepeso.'
+                         iacResult.classList.add('text-warning', 'font-weight-bold');
+                         iacSituationResult.classList.add('text-warning', 'font-weight-bold');
+                    }
+                    else if(iac > 25.0){
+                         iacGenderResult.value = 'Sexo: Masculino';
+                         iacSituationResult.value = 'Situação: Obesidade.'
+                         iacResult.classList.add('text-danger', 'font-weight-bold');
+                         iacSituationResult.classList.add('text-danger', 'font-weight-bold');
+                    }
                }
-               if((iac_gender[i].checked && iac_gender[i].value == '1') && (iac > 20 && iac < 25)){
-                    iacResult.classList.add('text-warning', 'font-weight-bold');
-                    iacSituationResult.classList.add('text-warning'); 
-                    iacGenderResult.value = "Sexo: Masculino"; 
-                    iacSituationResult.value = "Situação: Sobrepeso";
-               }
-               if((iac_gender[i].checked && iac_gender[i].value == '1') && (iac > 25)){
-                    iacResult.classList.add('text-danger', 'font-weight-bold');
-                    iacSituationResult.classList.add('text-danger');
-                    iacGenderResult.value = "Sexo: Masculino"; 
-                    iacSituationResult.value = "Situação: Obesidade"; 
-               }
-               if((iac_gender[i].checked && iac_gender[i].value == '2') && (iac > 21 && iac < 32)){
-                    iacResult.classList.add('text-success', 'font-weight-bold');
-                    iacSituationResult.classList.add('text-success');
-                    iacGenderResult.value = "Sexo: Feminino"; 
-                    iacSituationResult.value = "Situação: Adisposidade normal";
-               }
-               if((iac_gender[i].checked && iac_gender[i].value == '2') && (iac > 32 && iac < 38)){
-                    iacResult.classList.add('text-warning', 'font-weight-bold');
-                    iacSituationResult.classList.add('text-warning');
-                    iacGenderResult.value = "Sexo: Feminino"; 
-                    iacSituationResult.value = "Situação: Sobrepeso"; 
-               }
-               if((iac_gender[i].checked && iac_gender[i].value == '2') && (iac > 38)){
-                    iacResult.classList.add('text-danger', 'font-weight-bold');
-                    iacSituationResult.classList.add('text-danger');
-                    iacGenderResult.value = "Sexo: Feminino"; 
-                    iacSituationResult.value = "Situação: Obesidade"; 
+               else if((iac_gender[i].checked) && (iac_gender[i].value == '2')){
+                    if((iac > 20.0) && (iac < 32.0)){
+                         iacGenderResult.value = 'Sexo: Feminino';
+                         iacSituationResult.value = 'Situação: Adiposidade normal.'
+                         iacResult.classList.add('text-success', 'font-weight-bold');
+                         iacSituationResult.classList.add('text-success', 'font-weight-bold');
+                    }
+                    else if((iac > 32.0) && (iac < 38.0)){
+                         iacGenderResult.value = 'Sexo: Feminino';
+                         iacSituationResult.value = 'Situação: Sobrepeso.'
+                         iacResult.classList.add('text-warning', 'font-weight-bold');
+                         iacSituationResult.classList.add('text-warning', 'font-weight-bold');
+                    }
+                    else if(iac > 38.0){
+                         iacGenderResult.value = 'Sexo: Feminino';
+                         iacSituationResult.value = 'Situação: Obesidade.'
+                         iacResult.classList.add('text-danger', 'font-weight-bold');
+                         iacSituationResult.classList.add('text-danger', 'font-weight-bold');
+                    }
                }
           }
 });
@@ -78,7 +82,7 @@ btnCleanIAC.addEventListener('click', ()=>{
 //Imprime os resulatdos do IAC
 btnPrintIAC.addEventListener('click', ()=>{
      window.print();
-})
+});
 
 //Fecha o modal de IAC
 btnCloseIAC.addEventListener('click', ()=>{
