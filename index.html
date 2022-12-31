@@ -21,11 +21,21 @@
 
 <body>
 
+  <!--Tela splash-->
+  <div class="centerColumn d-none splash" id="splash">
+    <div class="splashScreen mx-auto" id="splashScreen">
+      <img class="d-block img mb-3 mx-auto" src="/img/nutricao.png" alt="">
+      <h1 class="text-center text-white">NutriWeb 2.0</h1>
+      <h4 class="text-center text-white">Carregando...</h4>
+    </div>
+  </div>
+
+  <!--Tela preta-->
   <div class="d-none blackScreen" id="blackScreen"></div>
 
   <div class="generalSite" id="generalSite">
     <!--Menu de navegação-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light navigation" id="navigation">
+    <nav class="d-none navbar navbar-expand-lg navbar-light bg-light navigation" id="navigation">
       <div class="container-fluid">
         <h1 class="fs-2 navbar-brand text-danger"><b><img class="img" src="/img/nutricao.png" alt="" width="45">
             NutriWeb 2.0</b></h1>
@@ -63,7 +73,7 @@
     <!--Final do menu de navegação-->
 
     <!--Capa do Site-->
-    <div class="container pt-3 coverSite" id="coverSite">
+    <div class="container d-none pt-3 coverSite" id="coverSite">
       <div class="row">
         <div class="col-sm-12 col-lg-6 mt-3 siteImg">
           <img src="/img/img1.jpg" alt="">
@@ -93,15 +103,16 @@
     </div>
 
     <!--Botões de menu-->
-    <div class="bg-white col-sm-12 col-lg-3 d-none p-3 menuButtons mx-auto radiusMediun shadow" id="menuButtons">
+    <div class="bg-white col-sm-12 col-lg-4 d-none p-3 menuButtons mx-auto radiusMediun shadow" id="menuButtons">
       <img class="d-block mx-auto" src="/img/nutricao.png" alt="" width="45">
       <h4 class="mt-2 text-center text-secondary">NutriWeb 2.0</h4>
       <button type="button" class="btn btn-block btn-primary mb-2 w-100" id="btnOpenIMC"><i
-          class="fa-solid fa-weight-scale"></i> Índice de Massa Corporal</button>
+          class="fa-solid fa-weight-scale"></i> Índice de Massa Corporal (IMC)</button>
       <button type="button" class="btn btn-block btn-primary mb-2 w-100" id="btnRCQ"><i class="fa-solid fa-people-arrows"></i>
-        Relação Cintura-Quadril</button>
+        Relação Cintura-Quadril (RCQ)</button>
       <button type="button" class="btn btn-block btn-primary mb-2 w-100" id="btnIAC"><i
-          class="fa-solid fa-person-arrow-down-to-line"></i> Índice de Adiposidade Corporal</button>
+          class="fa-solid fa-person-arrow-down-to-line"></i> Índice de Adiposidade Corporal (IAC)</button>
+      <button type="button" class="btn btn-block btn-primary mb-2 w-100" id="btnIAC"><img src="/img/kidney.png" alt="" width="20"> Taxa de Filtração Glomerular (TFG)</button>
       <button type="button" class="btn btn-block btn-outline-danger mb-2 w-100" id="btnCloseOptionsMenu"><i
           class="fa-solid fa-arrow-right-from-bracket"></i> Sair</button>
     </div>
@@ -132,7 +143,7 @@
         <h6 class="mb-3 text-center text-secondary">Preencha os dados para começar</h6>
         <input class="form-control mb-3" placeholder="Seu peso (quilos)" type="number" id="imcWeight">
         <input class="form-control mb-3" placeholder="Sua altura (metros)" type="number" id="imcHeight">
-        <button type="button" class="btn btn-block btn-primary mt-2 mb-2 w-100" id="btnCalculateIMC">Calcular
+        <button type="button" class="btn btn-block btn-success mt-2 mb-2 w-100" id="btnCalculateIMC">Calcular
           IMC</button>
         <input class="d-none form-control my-2 text-center text-primary" type="text" id="imcInputResult" disabled>
         <div class="imcButtonsResult d-none row" id="imcButtonsResult">
@@ -175,7 +186,7 @@
         </div>
         <input class="form-control mb-3" placeholder="Medida da cintura (cm)" type="number" id="rcqWaist">
         <input class="form-control mb-3" placeholder="Medida do quadril (cm)" type="number" id="rcqHip">
-        <button type="button" class="btn btn-block btn-primary mt-2 mb-2 w-100" id="btnCalculateRCQ">Calcular RCQ</button>
+        <button type="button" class="btn btn-block btn-success mt-2 mb-2 w-100" id="btnCalculateRCQ">Calcular RCQ</button>
         <div class="d-none inputRCQResults" id="inputRCQResults">
           <input class="bg-white border-0 fw-bold form-control my-2 text-center" type="text" id="rcqGenderResult" disabled>
           <input class="bg-white border-0 fw-bold form-control my-2 text-center" type="number" id="rcqResult" disabled>
@@ -183,12 +194,11 @@
         </div>
         <div class="rcqButtonsResult d-none row" id="rcqButtonsResult">
           <div class="col-sm-12 col-lg-6">
-            <button type="button" class="btn btn-block btn-outline-danger w-100" id="btnCleanRCQ"><i
-                class="fa-solid fa-pencil"></i> Limpar</button>
+            <button type="button" class="btn btn-block btn-outline-danger w-100" id="btnCleanRCQ"><i class="fa-solid fa-trash-can"></i> Apagar</button>
           </div>
           <div class="col-sm-12 col-lg-6">
-            <button type="button" class="btn btn-block btn-outline-secondary w-100" id="btnPrintRCQ"><i
-                class="fa-solid fa-pencil"></i> Imprimir resultado</button>
+            <button type="button" class="btn btn-block btn-outline-secondary w-100" id="btnPrintRCQ"><i class="fa-solid fa-file-pdf">
+            </i> Imprimir resultado</button>
           </div>
         </div>
         <h6 class="mt-3 text-center text-secondary" id="infoRCQ">Saiba mais em <a href=""><i
@@ -214,16 +224,16 @@
         </div>
         <input class="form-control mb-3" placeholder="Circunferência do quadril (cm)" type="number" id="iacHip">
         <input class="form-control mb-3" placeholder="Medida da altura (m)" type="number" id="iacHeight">
-        <button type="button" class="btn btn-block btn-primary mt-2 mb-2 w-100" id="btnCalculateIAC">Calcular IAC</button>
+        <button type="button" class="btn btn-block btn-success mt-2 mb-2 w-100" id="btnCalculateIAC">Calcular IAC</button>
         <div class="d-none inputIACResults" id="inputIACResults">
           <input class="bg-white border-0 form-control my-1 text-center fw-bold" type="text" id="iacGenderResult" disabled>
           <input class="bg-white border-0 form-control my-1 text-center fw-bold" type="number" id="iacResult" disabled>
           <input class="bg-white border-0 form-control my-1 text-center fw-bold" type="text" id="iacSituationResult" disabled>
         </div>
         <div class="iacButtonsResult d-none row" id="iacButtonsResult">
-          <div class="col-sm-12 col-lg-6">
+          <div class="col-sm-12 col-lg-6">Age
             <button type="button" class="btn btn-block btn-outline-danger mb-2 w-100" id="btnCleanIAC"><i
-                class="fa-solid fa-pencil"></i> Limpar</button>
+                class="fa-solid fa-pencil"></i> Apagar</button>
           </div>
           <div class="col-sm-12 col-lg-6">
             <button type="button" class="btn btn-block btn-outline-secondary mb-2 w-100" id="btnPrintIAC"><i class="fa-solid fa-print"></i> Imprimir resultado</button>
@@ -234,6 +244,45 @@
       </div>
     </div>
     <!---------------------------------------------------------Final do conteúdo do IAC------------------------------------------------->
+
+
+    <!--------------------------------------------------------------------TFG------------------------------------------------------------------->
+    <!--MODAL DE CÁLCULO DA TFG-->
+    <div class="col-sm-12 col-lg-6 tfgModal mx-auto row" id="tfgModal">
+      <div class="bg-white col-sm-12 col-lg-6 tfgBox mt-5 mx-auto p-2 radiusMediun shadow" id="tfgBox">
+        <button type="button" class="btn btn-close text-right text-left" id="btnCloseTFG"></button>
+        <img class="d-block mt-2 mx-auto" src="/img/nutricao.png" alt="" width="40">
+        <h5 class="mt-1 text-center text-secondary"><b>Taxa de Filtração Glomerular (TFG)</b></h5>
+        <h6 class="mb-3 text-center text-secondary">Preencha os dados para começar</h6>
+        <div class="centerRow form-check form-check-inline">
+          <label for="tfg_man">Masculino</label>
+          <input class="radio mx-2" name="genderTFG" type="radio" id="tfg_man" value="1">
+          <label for="tfg_woman">Feminino</label>
+          <input class="radio mx-2" name="genderTFG" type="radio" id="tfg_woman" value="2">
+        </div>
+        <input class="form-control mb-3" placeholder="Índice de creatinina sérica (mg/dl)" type="number" id="tfgCreatinine">
+        <input class="form-control mb-3" placeholder="Seu peso em quilos (kg)" type="number" id="tfgWeight">
+        <input class="form-control mb-3" placeholder="Sua idade (anos)" type="number" id="tfgAge">
+        <button type="button" class="btn btn-block btn-success mt-2 mb-2 w-100" id="btnCalculateTFG">Calcular TFG</button>
+        <div class="d-none inputTFGResults" id="inputTFGResults">
+          <input class="bg-white border form-control fs-6 my-1 text-center fw-bold" type="text" id="tfgGenderResult" disabled>
+          <input class="bg-white border form-control fs-3 my-1 text-center fw-bold" type="number" id="tfgResult" disabled>
+          <input class="bg-white border form-control fs-6 my-1 text-center fw-bold" type="text" id="tfgSituationResult" disabled>
+        </div>
+        <div class="tfgButtonsResult d-none row" id="tfgButtonsResult">
+          <div class="col-sm-12 col-lg-6">
+            <button type="button" class="btn btn-block btn-outline-danger mb-2 w-100" id="btnCleanTFG"><i
+                class="fa-solid fa-pencil"></i> Apagar</button>
+          </div>
+          <div class="col-sm-12 col-lg-6">
+            <button type="button" class="btn btn-block btn-outline-secondary mb-2 w-100" id="btnPrintTFG"><i class="fa-solid fa-print"></i> Imprimir</button>
+          </div>
+        </div>
+        <h6 class="mt-3 text-center text-secondary" id="infoTFG">Saiba mais em <a href=""><i
+              class="fa-brands fa-github text-secondary"></i></a></h6>
+      </div>
+    </div>
+    <!---------------------------------------------------------Final do conteúdo da TFG------------------------------------------------->
 
 
   </div>
@@ -252,6 +301,8 @@
   <script src="./js/imc.js"></script>
   <script src="./js/rcq.js"></script>
   <script src="./js/iac.js"></script>
+  <script src="./js/loader.js"></script>
+  <script src="/js/tfg.js"></script>
 </body>
 
 </html>

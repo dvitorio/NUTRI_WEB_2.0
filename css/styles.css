@@ -7,6 +7,19 @@
      box-sizing: border-box;
 }
 
+.splash{
+     width: 100vw;
+     height: 100vh;
+     background-color: rgb(116, 141, 187);
+     position: absolute;
+     z-index: 20;
+}
+
+.splashScreen h1, 
+.splashScreen h4{
+     text-shadow: 1px 1px 1px black;
+}
+
 .blackScreen{
      position: absolute;
      width: 100vw;

@@ -29,11 +29,15 @@ btnCalculateRCQ.addEventListener('click', () => {
      for(var i = 0; i < gender.length; i++){
           var rcqWaist = parseFloat(document.querySelector('#rcqWaist').value);
           var rcqHip = parseFloat(document.querySelector('#rcqHip').value);
+
           var rcq = (rcqWaist/rcqHip).toFixed(2);
+
           inputRCQResults.classList.remove('d-none');
           rcqButtonsResult.classList.remove('d-none');
           rcqResult.classList.remove('d-none');
+
           rcqResult.value = rcq;
+
           if(gender[i].checked && gender[i].value == '1'){
                if(rcq < 0.95){
                     rcqGenderResult.value = 'Sexo: Masculino';
@@ -79,8 +83,8 @@ btnCalculateRCQ.addEventListener('click', () => {
 
 //Limpa os campos do RCQ
 btnCleanRCQ.addEventListener('click', ()=>{
-     rcqWaist.value = '';
-     rcqHip.value = '';
+     document.getElementById('rcqWaist').value = '';
+     document.getElementById('rcqHip').value = '';
      rcq.value = '';
      document.getElementById('rcqResult').value = '';
      document.getElementById('rcqGenderResult').value = '';
