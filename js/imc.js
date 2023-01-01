@@ -46,20 +46,6 @@ btnOpenIMC.addEventListener('click', ()=>{
      imcBox.classList.remove('d-none');
 });
 
-//Abre modal de informação de IMC
-linkInfoModalIMC.addEventListener('click', ()=>{
-     coverSite.classList.add('d-none');
-     imcInfo.classList.remove('d-none');
-     blackScreen.classList.remove('d-none');
-});
-
-//Fecha modal de informação de IMC
-escapeInfoIMC.addEventListener('click', ()=>{
-     blackScreen.classList.add('d-none');
-     coverSite.classList.remove('d-none');
-     imcInfo.classList.add('d-none');
-})
-
 //Calcula o imc
 btnCalculateIMC.onclick = ()=>{
      let imcWeight = parseFloat(document.getElementById('imcWeight').value.replace(',','.'));
