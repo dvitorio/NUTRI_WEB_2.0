@@ -12,6 +12,12 @@ var iacSituationResult = document.getElementById('iacSituationResult');
 var inputIACResults = document.getElementById('inputIACResults');
 
 
+//Acessa o menu de opções
+function accessMenu(){
+     coverSite.classList.add('d-none');
+     navigation.classList.add('d-none');
+     menuButtons.classList.remove('d-none');
+}
 
 //Abre o modal de IAC
 btnIAC.addEventListener('click', ()=>{

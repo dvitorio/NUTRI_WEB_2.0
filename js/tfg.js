@@ -13,6 +13,12 @@ var tfgResult = document.getElementById('tfgResult');
 var tfgSituationResult = document.getElementById('tfgSituationResult');
 
 
+//Acessa o menu de opções
+function accessMenu(){
+     coverSite.classList.add('d-none');
+     navigation.classList.add('d-none');
+     menuButtons.classList.remove('d-none');
+}
 
 //Abre o modal de TFG
 btnTFG.addEventListener('click', ()=>{

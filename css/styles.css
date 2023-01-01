@@ -70,6 +70,18 @@ a:hover{
      cursor: pointer;
 }
 
+.nav-item button{
+     color: grey;
+     text-decoration: none !important;
+     font-size: 0.9rem !important;
+}
+
+.nav-item button:hover{
+     border: 1px solid grey;
+     background-color: grey;
+     color: white;    
+}
+
 .coverSite{
      border-radius: 20px !important;
 }

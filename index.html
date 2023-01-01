@@ -37,7 +37,7 @@
     <!--Menu de navegação-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light navigation" id="navigation">
       <div class="container-fluid">
-        <h1 class="fs-2 navbar-brand text-danger"><b><img class="img" src="/img/nutricao.png" alt="" width="45">
+        <h1 class="fs-2 navbar-brand text-secondary"><b><img class="img" src="/img/nutricao.png" alt="" width="45">
             NutriWeb 2.0</b></h1>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,25 +46,22 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <button class="btn btn-link mx-1" onclick="accessMenu()">Índice de Massa Corporal</button>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="linkInfoModalIMC">Índice de Massa Corporal (IMC)</a>
+              <button class="btn btn-link mx-1" onclick="accessMenu()">Relação Cintura-Quadril</button>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="linkInfoModalRCQ">Relação Cintura-Quadril (RCQ)</a>
+              <button class="btn btn-link mx-1" onclick="accessMenu()">Índice de Adiposidade Corporal</button>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="linkInfoModalIAC">Índice de Adiposidade Corporal (IAC)</a>
+              <button class="btn btn-link mx-1" onclick="accessMenu()">Taxa de Filtração Glomerular</button>
             </li>
             <li class="d-flex nav-item">
               <a class="nav-link" href=""><i class="fa-brands fa-github fs-5 mx-2"></i></a>
               <a class="nav-link" href=""><i class="fa-brands fa-whatsapp fs-5 mx-2"></i></a>
               <a class="nav-link" href=""><i class="fa-brands fa-linkedin-in fs-5 mx-2"></i></a>
               <a class="nav-link" href=""><i class="fa-solid fa-envelope fs-5 mx-2"></i></a>
-            </li>
-            <li class="nav-item">
-              <button class="btn btn-primary" id="btnStart">Iniciar agora!</button>
             </li>
           </ul>
         </div>
@@ -96,7 +93,11 @@
             embora seu cálculo não seja tão simples
             como este último. É um dos índices mais eficazes para avaliar o risco de obesidade do paciente.
           </p>
-          <button type="button" class="btn btn-secondary text-white" onclick="knowMore()">Clique para saber
+          <span class="text-secondary"><b>Taxa de Filtração Glomerular (TFG)</b></span>
+          <p class="mt-2 text-secondary">Esse importante indicador mede o nível de líquido filtrado para o interior da cápsula de Bowman,
+            e que é amplamente utilizada para avaliar a função renal.
+          </p>
+          <button type="button" class="btn btn-secondary mb-3 text-white" onclick="knowMore()">Clique para saber
             mais!</button>
         </div>
       </div>
@@ -118,22 +119,6 @@
     </div>
 
     <!----------------------------------------------------------- IMC---------------------------------------------------------------------------------->
-    <!--MODAL INFO IMC-->
-    <div class="col-lg-6 d-none radiusMediun imcInfo mx-auto p-3 rounded" id="imcInfo">
-      <h4 class="my-3 text-center text-secondary"><b>Índice de Massa Corporal (IMC)</b></h4>
-      <p class="my-2 px-3 text-secondary">O índice de massa corporal, conhecido simplesmente pela sigla IMC, é um
-        indicador que
-        relaciona o peso do indivíduo com sua altura, buscando estabelecer um peso ideal de acordo com sua estatura.
-      </p>
-      <p class="mb-3 my-2 px-3 text-secondary">No entanto, apesar de ser amplamente utilizado por nutricionistas,
-        médicos e outros profissionais de saúde, não é considerada uma medida ideal por não levar em
-        consideração a composição corporal da pessoa, ou seja, se um indivíduo com mais massa muscular ser erroneamente
-        avaliado como tendo sobrepeso
-        ou obeso. <br />A fórmula do IMC é dada através da expressão <b>IMC = peso/(altura)<sup>2</sup>.</b>
-      </p>
-      <button type="button" class="btn btn-danger" id="escapeInfoIMC"><i class="fa-solid fa-xmark"></i> Fechar</button>
-    </div>
-
     <!--MODAL DE CÁLCULO DO IMC-->
     <div class="col-sm-12 col-lg-6 imcModal mx-auto row" id="imcModal">
       <div class="bg-white col-sm-12 col-lg-6 d-none imcBox mt-5 mx-auto p-2 radiusMediun shadow" id="imcBox">

@@ -15,6 +15,12 @@ var rcqResult = document.getElementById('rcqResult');
 var rcqSituationResult = document.getElementById('rcqSituationResult');
 
 
+//Acessa o menu de opções
+function accessMenu(){
+     coverSite.classList.add('d-none');
+     navigation.classList.add('d-none');
+     menuButtons.classList.remove('d-none');
+}
 
 //Abre o modal de RCQ
 btnRCQ.addEventListener('click', () => {

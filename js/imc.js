@@ -6,12 +6,9 @@ const btnCloseIMC = document.getElementById('btnCloseIMC');
 const btnCloseIMCModal = document.getElementById('btnCloseIMCModal');
 const btnCloseOptionsMenu = document.getElementById('btnCloseOptionsMenu');
 const btnOpenIMC = document.getElementById('btnOpenIMC');
-const btnStart = document.getElementById('btnStart');
 const coverSite = document.getElementById('coverSite');
-const escapeInfoIMC = document.getElementById('escapeInfoIMC');
 const imcBox = document.getElementById('imcBox');
 const imcButtonsResult = document.getElementById('imcButtonsResult');
-const imcInfo = document.getElementById('imcInfo');
 const imcInputResult = document.getElementById('imcInputResult');
 const imcModal = document.getElementById('imcModal');
 const imcResult = document.getElementById('imcResult');
@@ -22,12 +19,12 @@ const imcAnalisys = document.getElementById('imcAnalisys');
 const imcResultAnalisys = document.getElementById('imcResultAnalisys');
 
 
-//Abrir menu de opções através do botão do navbar
-btnStart.addEventListener('click', ()=>{
-     menuButtons.classList.remove('d-none');
-     navigation.classList.add('d-none');
+//Acessa o menu de opções
+function accessMenu(){
      coverSite.classList.add('d-none');
-});
+     navigation.classList.add('d-none');
+     menuButtons.classList.remove('d-none');
+}
 
 //Abrir menu de opções a partir do botão "CLIQUE PARA SABER MAIS"
 function knowMore(){
