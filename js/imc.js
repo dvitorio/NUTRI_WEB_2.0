@@ -16,7 +16,7 @@ const linkInfoModalIMC = document.getElementById('linkInfoModalIMC');
 const menuButtons = document.getElementById('menuButtons');
 const navigation = document.getElementById('navigation');
 const imcAnalisys = document.getElementById('imcAnalisys');
-const imcResultAnalisys = document.getElementById('imcResultAnalisys');
+var imcResultAnalisys = document.getElementById('imcResultAnalisys');
 
 
 //Acessa o menu de opções
@@ -54,39 +54,31 @@ btnCalculateIMC.onclick = ()=>{
                imcInputResult.value = (imcWeight/Math.pow(imcHeight, 2)).toFixed(2);
                imcInputResult.classList.remove('d-none');
                imcButtonsResult.classList.remove('d-none');
+               imcAnalisys.classList.remove('d-none');
+               imcResultAnalisys.classList.remove('d-none');
                if(imcInputResult.value < 18.5){
-                    document.getElementById('imcAnalisys').innerHTML = "Seu peso está <b>ABAIXO</b> do ideal";
-                    document.getElementById('imcAnalisys').innerHTML = `Sua altura é ${imcHeight}`;
-                    imcAnalisys.classList.add('text-danger');
+                    document.getElementById('imcResultAnalisys').innerText = "Seu peso está <b>ABAIXO</b> do ideal";
+                    imcResultAnalisys.classList.add('text-danger');
                }
                else if((imcInputResult.value >= 18.5) && (imcInputResult.value < 24.99)){
-                    document.getElementById('imcAnalisys').innerHTML = "Seu peso é considerado <b>NORMAL</b>";
-                    document.getElementById('imcAnalisys').innerHTML = `Sua altura é ${imcHeight}`;
-
-                    imcAnalisys.classList.add('text-success');
+                    document.getElementById('imcResultAnalisys').innerText = "Seu peso é considerado <b>NORMAL</b>";
+                    imcResultAnalisys.classList.add('text-success');
                }
                else if((imcInputResult.value >= 25) && (imcInputResult.value < 29.99)){
-                    document.getElementById('imcAnalisys').innerHTML = "Você está com <b>SOBREPESO</b>";
-                    document.getElementById('imcHeight').innerText = `Sua altura é ${imcHeight.value}`;
-
-                    imcAnalisys.classList.add('text-warning');
+                    document.getElementById('imcResultAnalisys').innerText = "Você está com <b>SOBREPESO</b>";
+                    imcResultAnalisys.classList.add('text-warning');
                }
                else if((imcInputResult.value >= 30) && (imcInputResult.value < 34.99)){
-                    document.getElementById('imcAnalisys').innerHTML = "Você está com <b>OBESIDADE GRAU I</b>";
-                    document.getElementById('imcHeight').innerHTML = `Sua altura é ${imcHeight.value}`;
-
-                    imcAnalisys.classList.add('text-danger');
+                    document.getElementById('imcResultAnalisys').innerText = "Você está com <b>OBESIDADE GRAU I</b>";
+                    imcResultAnalisys.classList.add('text-danger');
                }
-               else if((imcInputResult.value >= 30) && (imcInputResult.value < 349.99)){
-                    document.getElementById('imcAnalisys').innerHTML = "Você está com <b>OBESIDADE GRAU II</b>";
-                    document.getElementById('imcHeight').innerHTML = `Sua altura é ${imcHeight.value}`;
-
-                    imcAnalisys.classList.add('text-danger');
+               else if((imcInputResult.value >= 35) && (imcInputResult.value < 39.99)){
+                    document.getElementById('imcResultAnalisys').innerText = "Você está com <b>OBESIDADE GRAU II</b>";
+                    imcResultAnalisys.classList.add('text-danger');
                }
                else if(imcInputResult.value >= 40){
-                    document.getElementById('imcAnalisys').innerHTML = "Você está com <b>OBESIDADE MÓRBIDA</b>";
-                    document.getElementById('imcHeight').innerHTML = `Sua altura é ${imcHeight.value}`;
-                    imcAnalisys.classList.add('text-danger');
+                    document.getElementById('imcResultAnalisys').innerText = "Você está com <b>OBESIDADE MÓRBIDA</b>";
+                    imcResultAnalisys.classList.add('text-danger');
                }
           }
           else{
