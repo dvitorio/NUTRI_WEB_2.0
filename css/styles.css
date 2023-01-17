@@ -29,7 +29,8 @@
 }
 
 .generalSite{
-     background-color: rgb(236, 231, 231);
+     background-image: url('/img/background.jpg');
+     background-size: cover;
      min-height: 100vh;
      width: 100vw;
 }
@@ -63,40 +64,6 @@
 .radiusLarge{
      border-radius: 10px !important;
 
-}
-
-a:hover{
-     color: blue !important;
-     cursor: pointer;
-}
-
-.nav-item button{
-     color: grey;
-     text-decoration: none !important;
-     font-size: 0.9rem !important;
-}
-
-.nav-item button:hover{
-     border: 1px solid grey;
-     background-color: grey;
-     color: white;    
-}
-
-.coverSite{
-     border-radius: 20px !important;
-}
-
-.siteImg img{
-     max-width: 650px;
-     width: 100%;
-     border-radius: 18px !important;
-}
-
-.sitePhrase{
-     max-width: 650px;
-     width: 100%;
-     border-radius: 10px;
-     background-color: white;
 }
 
 .menuButtons{
