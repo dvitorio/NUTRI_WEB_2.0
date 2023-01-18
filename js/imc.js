@@ -2,11 +2,10 @@
 const blackScreen = document.getElementById('blackScreen');
 const btnCalculateIMC = document.getElementById('btnCalculateIMC');
 const btnCleanIMC = document.getElementById('btnCleanIMC');
-const btnCloseIMC = document.getElementById('btnCloseIMC');
+const btnPrintIMC = document.getElementById('btnPrintIMC');
 const btnCloseIMCModal = document.getElementById('btnCloseIMCModal');
-const btnCloseOptionsMenu = document.getElementById('btnCloseOptionsMenu');
-const btnOpenIMC = document.getElementById('btnOpenIMC');
-const coverSite = document.getElementById('coverSite');
+const btnCloseGeneral = document.getElementById('btnCloseGeneral');
+const btnOpenIMC = document.querySelector('#btnOpenIMC');
 const imcBox = document.getElementById('imcBox');
 const imcButtonsResult = document.getElementById('imcButtonsResult');
 const imcInputResult = document.getElementById('imcInputResult');
@@ -19,30 +18,11 @@ const imcAnalisys = document.getElementById('imcAnalisys');
 var imcResultAnalisys = document.getElementById('imcResultAnalisys');
 
 
-//Acessa o menu de opções
-function accessMenu(){
-     coverSite.classList.add('d-none');
-     navigation.classList.add('d-none');
-     menuButtons.classList.remove('d-none');
-}
 
-//Abrir menu de opções a partir do botão "CLIQUE PARA SABER MAIS"
-function knowMore(){
-     navigation.classList.add('d-none');
-     menuButtons.classList.remove('d-none');
-     coverSite.classList.add('d-none');
-};
-
-//Fechar menu de opções e voltar à tela inicial do site
-btnCloseOptionsMenu.addEventListener('click', ()=>{
-     menuButtons.classList.add('d-none');
-     navigation.classList.remove('d-none');
-     coverSite.classList.remove('d-none');
-});
-
-//Abre o modal de IMC do menu de opções
+//Abre o modal de cálculo do IMC
 btnOpenIMC.addEventListener('click', ()=>{
      menuButtons.classList.add('d-none');
+     imcModal.classList.remove('d-none');
      imcBox.classList.remove('d-none');
 });
 
@@ -86,17 +66,17 @@ btnCalculateIMC.onclick = ()=>{
           }
 };
 
+//Imprime o resultado
+btnPrintIMC.addEventListener('click', ()=>{ window.print() });
+
 //Fechar modal IMC_BOX
-btnCloseIMC.onclick = ()=>{
-     navigation.classList.remove('d-none');
+btnCloseIMCModal.onclick = ()=>{
+     menuButtons.classList.remove('d-none');
      imcModal.classList.add('d-none');
-     coverSite.classList.remove('d-none');
 }
 
 //Fecha modal do IMC através do botão BTN-CLOSE
-function closeIMC(){
-     imcBox.classList.add('d-none');
-     navigation.classList.remove('d-none');
-     coverSite.classList.remove('d-none');
-}
+btnCloseGeneral.addEventListener('click', ()=>{ window.close()} );
+    
+
 
