@@ -92,15 +92,20 @@ btnCleanRCQ.addEventListener('click', ()=>{
      document.getElementById('rcqWaist').value = '';
      document.getElementById('rcqHip').value = '';
      rcq.value = '';
-     document.getElementById('rcqResult').value = '';
-     document.getElementById('rcqGenderResult').value = '';
-     document.getElementById('rcqSituationResult').value = '';
+     document.querySelector('#rcqResult').value = '';
+     document.querySelector('#rcqGenderResult').value = '';
+     document.querySelector('#rcqSituationResult').value = '';
      gender[i].checked = '';
 });
 
 //Imprime os resultados em tela
 btnPrintRCQ.onclick = ()=>{
-     window.print();
+     if(rcqWaist.value && rcqHip.value && rcq.value){
+          window.print();
+     }
+     else{
+          alert('Você não pode imprimir relatório com campos em branco!');
+     }
 }
 
 //Fecha o modal de RCQ

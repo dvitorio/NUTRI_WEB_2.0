@@ -10,6 +10,7 @@
 .generalSite{
      background-image: url('/img/background.jpg');
      background-size: cover;
+     background-repeat: no-repeat;
      min-height: 100vh;
      width: 100vw;
 }
@@ -66,7 +67,9 @@
 }
 
 .imcBox,
-.rcqBox{
+.rcqBox,
+.iacBox,
+.tfgBox{
     backdrop-filter: blur(20px) !important;
 }
 
@@ -88,6 +91,24 @@
      font-size: 2rem;
      height: 40px;
 }
+
+.rodape{
+     background-color: rgb(4, 17, 37);
+}
+
+.rodape a,
+.rodape h6{
+     cursor: pointer;
+     font-size: 0.9rem;
+     text-decoration: none !important;
+}
+
+.rodape i:hover{
+     color: #ffffff;
+     transform: scale(1.2);
+}
+
+
 
 
 

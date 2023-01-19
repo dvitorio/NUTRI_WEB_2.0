@@ -18,9 +18,10 @@ const imcAnalisys = document.getElementById('imcAnalisys');
 
 
 
-//Abre o modal de cálculo do IMC
+//Abre modal de cálculo do IMC
 btnOpenIMC.addEventListener('click', ()=>{
      menuButtons.classList.add('d-none');
+     cleanIMCModal();
      imcModal.classList.remove('d-none');
      imcBox.classList.remove('d-none');
 });
@@ -71,18 +72,29 @@ btnCalculateIMC.onclick = ()=>{
 };
 
 //Limpa os campos do modal de IMC
-btnCleanIMC.addEventListener('click', ()=>{
+function cleanIMCModal(){
      document.getElementById('imcResultAnalisys').value = '';
      document.getElementById('imcWeight').value = '';
      document.getElementById('imcHeight').value = '';
      document.getElementById('imcInputResult').value = '';
-});
+};
 
 //Imprime o resultado
-btnPrintIMC.addEventListener('click', ()=>{ window.print() });
+btnPrintIMC.addEventListener('click', ()=>{ 
+     if(imcWeight.value && imcHeight){
+          window.print(); 
+     }
+     else{
+          alert('Você precisa preencher os dados para imprimir o resultado!');
+     }
+     
+});
 
 //Fechar modal IMC_BOX
 btnCloseIMCModal.onclick = ()=>{
+     imcAnalisys.classList.add('d-none');
+     imcInputResult.classList.add('d-none');
+     imcButtonsResult.classList.add('d-none');
      menuButtons.classList.remove('d-none');
      imcModal.classList.add('d-none');
 }

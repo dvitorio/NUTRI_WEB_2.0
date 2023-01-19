@@ -55,11 +55,11 @@
         <input class="d-none form-control my-2 text-center text-primary" type="text" id="imcInputResult" disabled>
         <div class="imcButtonsResult d-none row" id="imcButtonsResult">
           <div class="col-sm-12 col-lg-6">
-            <button type="button" class="btn btn-block btn-danger w-100" id="btnCleanIMC"><i
+            <button type="button" class="btn btn-block btn-danger w-100" id="btnCleanIMC" onclick="cleanIMCModal()"><i
                 class="fa-solid fa-pencil"></i> Limpar</button>
           </div>
           <div class="col-sm-12 col-lg-6">
-            <button type="button" class="btn btn-block btn-outline-secondary w-100" id="btnPrintIMC"><i class="fa-solid fa-file-pdf"></i> Imprimir</button>
+            <button type="button" class="btn btn-block btn-secondary w-100" id="btnPrintIMC"><i class="fa-solid fa-file-pdf"></i> Imprimir</button>
           </div>
         </div>
         <div class="row mx-auto">
@@ -115,15 +115,15 @@
     <!--------------------------------------------------------------------IAC------------------------------------------------------------------->
     <!--MODAL DE CÁLCULO DO IAC-->
     <div class="col-sm-12 col-lg-6 d-none iacModal mx-auto row" id="iacModal">
-      <div class="bg-white col-sm-12 col-lg-6 iacBox mt-5 mx-auto p-2 radiusMediun shadow" id="iacBox">
+      <div class="border col-sm-12 col-lg-6 iacBox mt-5 mx-auto p-2 radiusMediun shadow" id="iacBox">
         <button type="button" class="btn btn-close text-right text-left" id="btnCloseIAC"></button>
         <img class="d-block mt-2 mx-auto" src="/img/nutricao.png" alt="" width="40">
-        <h5 class="mt-1 text-center text-secondary"><b>Índice de Adiposidade Corporal (IAC)</b></h5>
-        <h6 class="mb-3 text-center text-secondary">Preencha os dados para começar</h6>
+        <h5 class="mt-1 text-center text-white"><b>Índice de Adiposidade Corporal (IAC)</b></h5>
+        <h6 class="mb-3 text-center text-white">Preencha os dados para começar</h6>
         <div class="form-check form-check-inline">
-          <label for="iac_man">Masculino</label>
+          <label class="form-label text-white" for="iac_man">Masculino</label>
           <input class="radio mr-2" name="genderIAC" type="radio" id="iac_man" value="1">
-          <label for="iac_woman">Feminino</label>
+          <label class="form-label text-white" for="iac_woman">Feminino</label>
           <input class="radio mr-2" name="genderIAC" type="radio" id="iac_woman" value="2">
         </div>
         <input class="form-control mb-3" placeholder="Circunferência do quadril (cm)" type="number" id="iacHip">
@@ -140,7 +140,8 @@
                 class="fa-solid fa-pencil"></i> Apagar</button>
           </div>
           <div class="col-sm-12 col-lg-6">
-            <button type="button" class="btn btn-block btn-outline-secondary mb-2 w-100" id="btnPrintIAC"><i class="fa-solid fa-print"></i> Imprimir resultado</button>
+            <button type="button" class="btn btn-block btn-secondary mb-2 w-100" id="btnPrintIAC"><i class="fa-solid fa-file-pdf">
+            </i> Imprimir </button>
           </div>
         </div>
         <h6 class="mt-3 text-center text-secondary" id="infoIAC">Saiba mais em <a href=""><i
@@ -153,15 +154,15 @@
     <!--------------------------------------------------------------------TFG------------------------------------------------------------------->
     <!--MODAL DE CÁLCULO DA TFG-->
     <div class="col-sm-12 col-lg-6 d-none tfgModal mx-auto row" id="tfgModal">
-      <div class="bg-white col-sm-12 col-lg-6 tfgBox mt-5 mx-auto p-2 radiusMediun shadow" id="tfgBox">
+      <div class="border col-sm-12 col-lg-6 tfgBox mt-5 mx-auto p-2 radiusMediun shadow" id="tfgBox">
         <button type="button" class="btn btn-close text-right text-left" id="btnCloseTFG"></button>
         <img class="d-block mt-2 mx-auto" src="/img/nutricao.png" alt="" width="40">
-        <h5 class="mt-1 text-center text-secondary"><b>Taxa de Filtração Glomerular (TFG)</b></h5>
-        <h6 class="mb-3 text-center text-secondary">Preencha os dados para começar</h6>
+        <h5 class="mt-1 text-center text-white"><b>Taxa de Filtração Glomerular (TFG)</b></h5>
+        <h6 class="mb-3 text-center text-white">Preencha os dados para começar</h6>
         <div class="centerRow form-check form-check-inline">
-          <label for="tfg_man">Masculino</label>
+          <label class="form-label text-white" for="tfg_man">Masculino</label>
           <input class="radio mx-2" name="genderTFG" type="radio" id="tfg_man" value="1">
-          <label for="tfg_woman">Feminino</label>
+          <label class="form-label text-white" for="tfg_woman">Feminino</label>
           <input class="radio mx-2" name="genderTFG" type="radio" id="tfg_woman" value="2">
         </div>
         <input class="form-control mb-3" placeholder="Índice de creatinina sérica (mg/dl)" type="number" id="tfgCreatinine">
@@ -175,11 +176,12 @@
         </div>
         <div class="tfgButtonsResult d-none row" id="tfgButtonsResult">
           <div class="col-sm-12 col-lg-6">
-            <button type="button" class="btn btn-block btn-outline-danger mb-2 w-100" id="btnCleanTFG"><i
+            <button type="button" class="btn btn-block btn-danger mb-2 w-100" id="btnCleanTFG"><i
                 class="fa-solid fa-pencil"></i> Apagar</button>
           </div>
           <div class="col-sm-12 col-lg-6">
-            <button type="button" class="btn btn-block btn-outline-secondary mb-2 w-100" id="btnPrintTFG"><i class="fa-solid fa-print"></i> Imprimir</button>
+            <button type="button" class="btn btn-block btn-secondary mb-2 w-100" id="btnPrintTFG"><i class="fa-solid fa-file-pdf">
+            </i> Imprimir</button>
           </div>
         </div>
         <h6 class="mt-3 text-center text-secondary" id="infoTFG">Saiba mais em <a href=""><i
@@ -188,6 +190,17 @@
     </div>
     <!---------------------------------------------------------Final do conteúdo da TFG------------------------------------------------->
 
+    <!--Rodapé-->
+    <div class="footer fixed-bottom pt-3 p-2 rodape">
+      <h6 class="text-center text-secondary">
+        <i class="fa-brands fa-github mx-2"></i>
+        <i class="fa-brands fa-whatsapp mx-2"></i>
+        <i class="fa-brands fa-linkedin-in mx-2"></i>
+        <i class="fa-solid fa-envelope mx-2"></i>
+      </h6>
+      <h6 class="text-center text-secondary">Desenvolvido por <a class="text-secondary" href="">Daniel Vitorio</a></h6>
+      <h6 class="text-center text-secondary">Todos os direitos reservados. &copy; 2022</h6>
+    </div>
 
   </div>
 
