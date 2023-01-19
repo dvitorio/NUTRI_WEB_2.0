@@ -66,6 +66,11 @@
 }
 
 .imcBox,
+.rcqBox{
+    backdrop-filter: blur(20px) !important;
+}
+
+.imcBox,
 .alertRCQ{
      min-width: 290px !important;
      max-width: 450px !important;

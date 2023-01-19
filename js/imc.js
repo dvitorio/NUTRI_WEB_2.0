@@ -15,7 +15,6 @@ const linkInfoModalIMC = document.getElementById('linkInfoModalIMC');
 const menuButtons = document.getElementById('menuButtons');
 const navigation = document.getElementById('navigation');
 const imcAnalisys = document.getElementById('imcAnalisys');
-var imcResultAnalisys = document.getElementById('imcResultAnalisys');
 
 
 
@@ -30,34 +29,39 @@ btnOpenIMC.addEventListener('click', ()=>{
 btnCalculateIMC.onclick = ()=>{
      let imcWeight = parseFloat(document.getElementById('imcWeight').value.replace(',','.'));
      let imcHeight = parseFloat(document.getElementById('imcHeight').value.replace(',','.'));
+
           if((imcWeight >= 15 && imcWeight <= 500) && (imcHeight >= 0.8 && imcHeight <= 2.72)){
                imcInputResult.value = (imcWeight/Math.pow(imcHeight, 2)).toFixed(2);
+
+               var imcResultAnalisys = document.getElementById('imcResultAnalisys');
+               imcResultAnalisys.classList.remove('d-none');
+
+               imcAnalisys.classList.remove('d-none');
                imcInputResult.classList.remove('d-none');
                imcButtonsResult.classList.remove('d-none');
-               imcAnalisys.classList.remove('d-none');
-               imcResultAnalisys.classList.remove('d-none');
+
                if(imcInputResult.value < 18.5){
-                    document.getElementById('imcResultAnalisys').innerText = "Seu peso está <b>ABAIXO</b> do ideal";
+                    document.getElementById('imcResultAnalisys').value = "Seu peso está ABAIXO do ideal";
                     imcResultAnalisys.classList.add('text-danger');
                }
                else if((imcInputResult.value >= 18.5) && (imcInputResult.value < 24.99)){
-                    document.getElementById('imcResultAnalisys').innerText = "Seu peso é considerado <b>NORMAL</b>";
+                    document.getElementById('imcResultAnalisys').value = "Seu peso é considerado NORMAL";
                     imcResultAnalisys.classList.add('text-success');
                }
                else if((imcInputResult.value >= 25) && (imcInputResult.value < 29.99)){
-                    document.getElementById('imcResultAnalisys').innerText = "Você está com <b>SOBREPESO</b>";
-                    imcResultAnalisys.classList.add('text-warning');
+                    document.getElementById('imcResultAnalisys').value = "Você está com SOBREPESO";
+                    imcResultAnalisys.classList.add('text-danger');
                }
                else if((imcInputResult.value >= 30) && (imcInputResult.value < 34.99)){
-                    document.getElementById('imcResultAnalisys').innerText = "Você está com <b>OBESIDADE GRAU I</b>";
+                    document.getElementById('imcResultAnalisys').value = "Você está com OBESIDADE GRAU I";
                     imcResultAnalisys.classList.add('text-danger');
                }
                else if((imcInputResult.value >= 35) && (imcInputResult.value < 39.99)){
-                    document.getElementById('imcResultAnalisys').innerText = "Você está com <b>OBESIDADE GRAU II</b>";
+                    document.getElementById('imcResultAnalisys').value = "Você está com OBESIDADE GRAU II";
                     imcResultAnalisys.classList.add('text-danger');
                }
                else if(imcInputResult.value >= 40){
-                    document.getElementById('imcResultAnalisys').innerText = "Você está com <b>OBESIDADE MÓRBIDA</b>";
+                    document.getElementById('imcResultAnalisys').value = "Você está com OBESIDADE MÓRBIDA";
                     imcResultAnalisys.classList.add('text-danger');
                }
           }
@@ -65,6 +69,14 @@ btnCalculateIMC.onclick = ()=>{
                alert('Peso e/ou altura inválido(s)!');
           }
 };
+
+//Limpa os campos do modal de IMC
+btnCleanIMC.addEventListener('click', ()=>{
+     document.getElementById('imcResultAnalisys').value = '';
+     document.getElementById('imcWeight').value = '';
+     document.getElementById('imcHeight').value = '';
+     document.getElementById('imcInputResult').value = '';
+});
 
 //Imprime o resultado
 btnPrintIMC.addEventListener('click', ()=>{ window.print() });

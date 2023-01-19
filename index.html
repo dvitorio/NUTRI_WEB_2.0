@@ -28,7 +28,7 @@
     <!--Botões de menu-->
     <div class="border col-sm-12 col-lg-4 p-3 menuButtons mx-auto radiusMediun shadow" id="menuButtons">
       <img class="d-block mx-auto" src="/img/nutricao.png" alt="" width="45">
-      <h4 class="mt-2 text-center text-secondary">NutriWeb 2.0</h4>
+      <h4 class="mt-2 text-center text-white">NutriWeb 2.0</h4>
       <button type="button" class="btn btn-block btn-primary mb-2 w-100" id="btnOpenIMC"><i
           class="fa-solid fa-weight-scale"></i> Índice de Massa Corporal (IMC)</button>
       <button type="button" class="btn btn-block btn-primary mb-2 w-100" id="btnRCQ"><i class="fa-solid fa-people-arrows"></i>
@@ -43,11 +43,11 @@
     <!----------------------------------------------------------- IMC---------------------------------------------------------------------------------->
     <!--MODAL DE CÁLCULO DO IMC-->
     <div class="col-sm-12 col-lg-6 imcModal mx-auto row" id="imcModal">
-      <div class="bg-white col-sm-12 col-lg-6 d-none imcBox mt-5 mx-auto p-2 radiusMediun shadow" id="imcBox">
+      <div class="border col-sm-12 col-lg-6 d-none imcBox mt-5 mx-auto p-2 radiusMediun shadow" id="imcBox">
         <button type="button" class="btn btn-close text-right text-left" id="btnCloseIMCModal"></button>
         <img class="d-block mt-2 mx-auto" src="/img/nutricao.png" alt="" width="40">
-        <h5 class="mt-1 text-center text-secondary">Índice de Massa Coporal (IMC)</h5>
-        <h6 class="mb-3 text-center text-secondary">Preencha os dados para começar</h6>
+        <h5 class="mt-1 text-center text-white">Índice de Massa Coporal (IMC)</h5>
+        <h6 class="mb-3 text-center text-white">Preencha os dados para começar</h6>
         <input class="form-control mb-3" placeholder="Seu peso (quilos)" type="number" id="imcWeight">
         <input class="form-control mb-3" placeholder="Sua altura (metros)" type="number" id="imcHeight">
         <button type="button" class="btn btn-block btn-success mt-2 mb-2 w-100" id="btnCalculateIMC">Calcular
@@ -59,13 +59,12 @@
                 class="fa-solid fa-pencil"></i> Limpar</button>
           </div>
           <div class="col-sm-12 col-lg-6">
-            <button type="button" class="btn btn-block btn-outline-secondary w-100" id="btnPrintIMC"><i
-                class="fa-solid fa-xmark"></i> Imprimir</button>
+            <button type="button" class="btn btn-block btn-outline-secondary w-100" id="btnPrintIMC"><i class="fa-solid fa-file-pdf"></i> Imprimir</button>
           </div>
         </div>
         <div class="row mx-auto">
           <div class="d-none col p-2 imcAnalisys mx-auto shadow" id="imcAnalisys">
-            <input class="bg-white d-none border-0 fw-bold form-control my-2 text-center" id="imcResultAnalisys" disabled>
+            <input class="bg-white border-0 form-control my-2 text-center" id="imcResultAnalisys" disabled>
           </div>
         </div>
         <h6 class="mt-3 text-center text-secondary" id="infoIMC">Saiba mais em <a href=""><i
@@ -78,15 +77,15 @@
     <!--------------------------------------------------------------------RCQ------------------------------------------------------------------->
     <!--MODAL DE CÁLCULO DO RCQ-->
     <div class="col-sm-12 col-lg-6 d-none rcqModal mx-auto row" id="rcqModal">
-      <div class="bg-white col-sm-12 col-lg-6 rcqBox mt-5 mx-auto p-2 radiusMediun shadow" id="rcqBox">
+      <div class="border col-sm-12 col-lg-6 rcqBox mt-5 mx-auto p-2 radiusMediun shadow" id="rcqBox">
         <button type="button" class="btn btn-close text-right text-left" id="btnCloseRCQ"></button>
         <img class="d-block mt-2 mx-auto" src="/img/nutricao.png" alt="" width="40">
-        <h5 class="mt-1 text-center text-secondary"><b>Relação Cintura/Quadril (RCQ)</b></h5>
-        <h6 class="mb-3 text-center text-secondary">Preencha os dados para começar</h6>
+        <h5 class="mt-1 text-center text-white"><b>Relação Cintura/Quadril (RCQ)</b></h5>
+        <h6 class="mb-3 text-center text-white">Preencha os dados para começar</h6>
         <div class="form-check form-check-inline generoRCQ">
-          <label for="masculino"> Masculino</label>
+          <label class="text-white" for="masculino"> Masculino</label>
           <input class="radio mr-2" name="gender" type="radio" id="masculino" value="1">
-          <label for="feminino"> Feminino</label>
+          <label class="text-white" for="feminino"> Feminino</label>
           <input class="radio mr-2" name="gender" type="radio" id="feminino" value="2">
         </div>
         <input class="form-control mb-3" placeholder="Medida da cintura (cm)" type="number" id="rcqWaist">
@@ -103,7 +102,7 @@
           </div>
           <div class="col-sm-12 col-lg-6">
             <button type="button" class="btn btn-block btn-outline-secondary w-100" id="btnPrintRCQ"><i class="fa-solid fa-file-pdf">
-            </i> Imprimir resultado</button>
+            </i> Imprimir</button>
           </div>
         </div>
         <h6 class="mt-3 text-center text-secondary" id="infoRCQ">Saiba mais em <a href=""><i
