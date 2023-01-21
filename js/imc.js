@@ -4,7 +4,7 @@ const btnCalculateIMC = document.getElementById('btnCalculateIMC');
 const btnCleanIMC = document.getElementById('btnCleanIMC');
 const btnPrintIMC = document.getElementById('btnPrintIMC');
 const btnCloseIMCModal = document.getElementById('btnCloseIMCModal');
-const btnCloseGeneral = document.getElementById('btnCloseGeneral');
+const btnCloseGeneral = document.querySelector('#btnCloseGeneral');
 const btnOpenIMC = document.querySelector('#btnOpenIMC');
 const imcBox = document.getElementById('imcBox');
 const imcButtonsResult = document.getElementById('imcButtonsResult');
@@ -100,7 +100,7 @@ btnCloseIMCModal.onclick = ()=>{
 }
 
 //Fecha modal do IMC através do botão BTN-CLOSE
-btnCloseGeneral.addEventListener('click', ()=>{ window.close()} );
+btnCloseGeneral.onclick = ()=>{ window.close() };
     
 
 
