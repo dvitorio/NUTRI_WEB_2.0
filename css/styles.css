@@ -53,12 +53,13 @@
      transform: translate(-50%, -50%);
      animation: menuButtons 0.8s linear !important;
      backdrop-filter: blur(20px);
-     border: .5px solid grey !important;
+     box-shadow: 3px 9px 9px rgb(24, 24, 24) !important;
 }
 
-.btn-close{
+.btn-close {
      position: relative;
      margin-left: 90%;
+     color: white !important;
 }
 
 .generoRCQ{
@@ -71,6 +72,8 @@
 .iacBox,
 .tfgBox{
     backdrop-filter: blur(20px) !important;
+    border: .5px solid rgb(103, 99, 99) !important;
+    box-shadow: 3px 9px 9px rgb(24, 24, 24) !important;
 }
 
 .imcBox,
@@ -92,9 +95,9 @@
      height: 40px;
 }
 
-.rodape{
+/*.rodape{
      background-color: rgba(4, 17, 37, 0.607);
-}
+}*/
 
 .rodape a,
 .rodape h6{
@@ -107,10 +110,6 @@
      color: #ffffff;
      transform: scale(1.2);
 }
-
-
-
-
 
 
 
